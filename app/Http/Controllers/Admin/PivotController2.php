@@ -11,7 +11,6 @@ use App\Models\RefWilayah;
 use App\Models\DataProfileSatker;
 use Illuminate\Support\Facades\Cache;
 
-
 class PivotController extends Controller
 {
     public function __construct(Request $request)

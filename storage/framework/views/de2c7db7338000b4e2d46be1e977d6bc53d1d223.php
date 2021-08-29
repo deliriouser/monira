@@ -1,0 +1,1 @@
+<div id="<?php echo $id; ?>"></div><?php /**PATH /Users/user/dev/app-monira-v2/vendor/arielmejiadev/larapex-charts/src/../resources/views/chart/container.blade.php ENDPATH**/ ?>

@@ -1,0 +1,2445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="pixelstrap">
+    <link rel="icon" href="http://app-monira.test/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://app-monira.test/assets/images/favicon.ico" type="image/x-icon">
+    <title>MONIRA : MONITORING INFORMASI DAN REALISASI ANGGARAN</title>
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/font-awesome.css">
+<!-- ico-font-->
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/vendors/icofont.css">
+<!-- Themify icon-->
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/vendors/themify.css">
+<!-- Flag icon-->
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/vendors/flag-icon.css">
+<!-- Feather icon-->
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/vendors/feather-icon.css">
+<!-- Plugins css start-->
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/vendors/datatables.css">
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/vendors/datatable-extension.css">
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/vendors/scrollbar.css">
+<!-- Bootstrap css-->
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/vendors/bootstrap.css">
+<!-- App css-->
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/style.css">
+<link id="color" rel="stylesheet" href="http://app-monira.test/assets/css/color-1.css" media="screen">
+<!-- Responsive css-->
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/responsive.css">
+
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/vendors/sweetalert2.css">
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/vendors/dropzone.css">
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/vendors/select2.css">
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/vendors/grid/dx.softblue.css">
+<link rel="stylesheet" type="text/css" href="http://app-monira.test/assets/css/vendors/jsgrid.css">
+      </head>
+  <body onload="startTime()">
+      <div class="loader-wrapper">
+        <div class="loader-index"><span></span></div>
+        <svg>
+          <defs></defs>
+          <filter id="goo">
+            <fegaussianblur in="SourceGraphic" stddeviation="11" result="blur"></fegaussianblur>
+            <fecolormatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"> </fecolormatrix>
+          </filter>
+        </svg>
+      </div>
+    <!-- tap on top starts-->
+    <div class="tap-top"><i data-feather="chevrons-up"></i></div>
+    <!-- tap on tap ends-->
+    <!-- page-wrapper Start-->
+    <div class="page-wrapper compact-wrapper" id="pageWrapper">
+      <!-- Page Header Start-->
+      <div class="page-header">
+  <div class="header-wrapper row m-0">
+    <form class="form-inline search-full col" action="#" method="get">
+      <div class="mb-3 w-100">
+        <div class="Typeahead Typeahead--twitterUsers">
+          <div class="u-posRelative">
+            <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text" placeholder="Search Cuba .." name="q" title="" autofocus>
+            <div class="spinner-border Typeahead-spinner" role="status"><span class="sr-only">Loading...</span></div>
+            <i class="close-search" data-feather="x"></i>
+          </div>
+          <div class="Typeahead-menu"></div>
+        </div>
+      </div>
+    </form>
+    <div class="header-logo-wrapper col-auto p-0">
+      <div class="logo-wrapper"><a href="http://app-monira.test"><img class="img-fluid" src="http://app-monira.test/assets/images/logo/logo.png" alt=""></a></div>
+      <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i></div>
+    </div>
+    <div class="left-header col horizontal-wrapper ps-0">
+        <ul class="nav-menus">
+        <li title="Refresh Data" class="maximize"><a class="text-dark" href="http://app-monira.test/admin/setyear/2021?unit=admin"><i data-feather="cpu"></i></a></li>
+        </ul>
+    </div>
+    <div class="nav-right col-10 pull-right right-header p-0">
+      <ul class="nav-menus">
+        <li title="Dark Mode">
+          <div class="mode"><i class="fa fa-moon-o"></i></div>
+        </li>
+
+        <li title="Fullscreen Mode" class="maximize"><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i data-feather="maximize"></i></a></li>
+
+        
+        <li class="language-nav">
+            <div class="translate_wrapper">
+              <div class="current_lang">
+                <div class="lang text-lg-center"><i class="fa fa-spin fa-cog"></i> 2021</div>
+              </div>
+              <div class="more_lang">
+                                <a href="http://app-monira.test/admin/setyear/2021?unit=admin" class="active">
+                  <div class="lang"><span class="lang-txt">2021</span></div>
+                </a>
+                                <a href="http://app-monira.test/admin/setyear/2020?unit=admin" class="active">
+                  <div class="lang"><span class="lang-txt">2020</span></div>
+                </a>
+                                <a href="http://app-monira.test/admin/setyear/2019?unit=admin" class="active">
+                  <div class="lang"><span class="lang-txt">2019</span></div>
+                </a>
+                                <a href="http://app-monira.test/admin/setyear/2018?unit=admin" class="active">
+                  <div class="lang"><span class="lang-txt">2018</span></div>
+                </a>
+                                <a href="http://app-monira.test/admin/setyear/2017?unit=admin" class="active">
+                  <div class="lang"><span class="lang-txt">2017</span></div>
+                </a>
+                                <a href="http://app-monira.test/admin/setyear/2016?unit=admin" class="active">
+                  <div class="lang"><span class="lang-txt">2016</span></div>
+                </a>
+                              </div>
+            </div>
+          </li>
+
+        <li class="profile-nav onhover-dropdown p-0 me-0">
+          <div class="media profile-media">
+            <img class="b-r-10 img-40" src="http://app-monira.test/assets/images/user/logo.png" alt="">
+            <div class="media-body">
+              <span>ADMIN MONIRA</span>
+              <p class="mb-0 font-roboto">ADMIN <i class="middle fa fa-angle-down"></i></p>
+            </div>
+          </div>
+          <ul class="profile-dropdown onhover-show-div">
+            <li><a href="http://app-monira.test/admin/profile"><i data-feather="user"></i><span>Account </span></a></li>
+            
+            <li><a href="http://app-monira.test/logout"><i data-feather="log-out"> </i><span>Log Out</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <script class="result-template" type="text/x-handlebars-template">
+      <div class="ProfileCard u-cf">
+      <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
+      <div class="ProfileCard-details">
+      <div class="ProfileCard-realName">{{name}}</div>
+      </div>
+      </div>
+    </script>
+    <script class="empty-template" type="text/x-handlebars-template"><div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
+  </div>
+</div>
+      <div data-bs-backdrop="static" data-bs-keyboard="false" class="modal fade" id="open-modal" tabindex="-1" role="dialog" aria-labelledby="Modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog" role="document">
+       <div class="modal-content modal-content-static">
+
+        </div>
+    </div>
+ </div>
+      <!-- Page Header Ends  -->
+      <!-- Page Body Start-->
+      <div class="page-body-wrapper">
+        <!-- Page Sidebar Start-->
+        <div class="sidebar-wrapper">
+	<div>
+		<div class="logo-wrapper">
+			<a href="http://app-monira.test"><img class="img-fluid for-light" src="http://app-monira.test/assets/images/logo/logo.png" alt=""><img class="img-fluid for-dark" src="http://app-monira.test/assets/images/logo/logo_dark.png" alt=""></a>
+			<div class="back-btn"><i class="fa fa-angle-left"></i></div>
+			<div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i></div>
+		</div>
+		<div class="logo-icon-wrapper"><a href="http://app-monira.test"><img class="img-fluid" src="http://app-monira.test/assets/images/logo/logo-icon.png" alt=""></a></div>
+		<nav class="sidebar-main">
+			<div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
+			<div id="sidebar-menu">
+				<ul class="sidebar-links" id="simple-bar">
+					<li class="back-btn">
+						<a href="http://app-monira.test"><img class="img-fluid" src="http://app-monira.test/assets/images/logo/logo-icon.png" alt=""></a>
+						<div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
+					</li>
+					<li class="sidebar-main-title">
+						<div>
+							<h6 class="lan-1">General </h6>
+                     		<p class="lan-2">Dashboards,Menu &amp; layout.</p>
+						</div>
+					</li>
+					<li class="sidebar-list">
+						<a class="sidebar-link sidebar-title " href="#"><i data-feather="home"></i><span class="lan-3">Dashboards</span>
+							<div class="according-menu"><i class="fa fa-angle-down"></i></div>
+						</a>
+						<ul class="sidebar-submenu" style="display: none">
+							<li><a class="lan-4 none" href="http://app-monira.test/admin/dashboard/belanja">Belanja</a></li>
+                     		<li><a class="lan-5 " href="http://app-monira.test/admin/dashboard/penerimaan">PNBP</a></li>
+						</ul>
+					</li>
+
+                    
+					<li class="sidebar-list">
+						<a class="sidebar-link sidebar-title " href="#"><i data-feather="bar-chart"></i><span class="lan-3">Rangking</span>
+							<div class="according-menu"><i class="fa fa-angle-down"></i></div>
+						</a>
+						<ul class="sidebar-submenu" style="display: none">
+							<li><a class="lan-4 " href="http://app-monira.test/admin/rangking/satker">Satker</a></li>
+                     		<li><a class="lan-5 " href="http://app-monira.test/admin/rangking/propinsi">Propinsi</a></li>
+                     		<li><a class="lan-5 " href="http://app-monira.test/admin/rangking/pivotsatker">Propinsi Satker</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-list">
+						<a class="sidebar-link sidebar-title " href="#">
+							<i data-feather="shopping-bag"></i><span>Belanja </span>
+							<div class="according-menu"><i class="fa fa-angle-right"></i></div>
+						</a>
+						<ul class="sidebar-submenu" style="display: none;">
+							<li>
+								<a class="submenu-title " href="#">Eselon 1
+									<div class="according-menu"><i class="fa fa-angle-right"></i></div>
+								</a>
+								<ul class="nav-sub-childmenu submenu-content" style="display: none;">
+									<li><a href="http://app-monira.test/admin/belanja/eselon1/belanja/7" class="">Belanja</a></li>
+									<li><a href="http://app-monira.test/admin/belanja/eselon1/sumberdana/7" class="">Sumber Dana</a></li>
+									<li><a href="http://app-monira.test/admin/belanja/eselon1/kegiatan/7" class="">Kegiatan</a></li>
+									<li><a href="http://app-monira.test/admin/belanja/eselon1/output/7" class="">Output</a></li>
+									
+									<li><a href="http://app-monira.test/admin/belanja/eselon1/kewenangan/7" class="">Kewenangan</a></li>
+									<li><a href="http://app-monira.test/admin/belanja/eselon1/akun/7" class="">Akun</a></li>
+								</ul>
+							</li>
+
+                            <li>
+                                <a class="submenu-title " href="#">Propinsi
+                                    <div class="according-menu"><i class="fa fa-angle-right"></i></div>
+                                </a>
+                                <ul class="nav-sub-childmenu submenu-content" style="display: none;">
+                                    <li><a href="http://app-monira.test/admin/belanja/propinsi/belanja/7" class="">Belanja</a></li>
+                                    <li><a href="http://app-monira.test/admin/belanja/propinsi/sumberdana/7" class="">Sumber Dana</a></li>
+                                    <li><a href="http://app-monira.test/admin/belanja/propinsi/kegiatan/7" class="">Kegiatan</a></li>
+                                    <li><a href="http://app-monira.test/admin/belanja/propinsi/output/7" class="">Output</a></li>
+                                    
+                                    <li><a href="http://app-monira.test/admin/belanja/propinsi/kewenangan/7" class="">Kewenangan</a></li>
+                                    <li><a href="http://app-monira.test/admin/belanja/propinsi/akun/7" class="">Akun</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="submenu-title " href="#">Satker
+                                    <div class="according-menu"><i class="fa fa-angle-right"></i></div>
+                                </a>
+                                <ul class="nav-sub-childmenu submenu-content" style="display: none;">
+                                    <li><a href="http://app-monira.test/admin/belanja/satker/belanja/7" class="">Belanja</a></li>
+                                    <li><a href="http://app-monira.test/admin/belanja/satker/sumberdana/7" class="">Sumber Dana</a></li>
+                                    <li><a href="http://app-monira.test/admin/belanja/satker/kegiatan/7" class="">Kegiatan</a></li>
+                                    <li><a href="http://app-monira.test/admin/belanja/satker/output/7" class="">Output</a></li>
+                                    
+                                    <li><a href="http://app-monira.test/admin/belanja/satker/kewenangan/7" class="">Kewenangan</a></li>
+                                    <li><a href="http://app-monira.test/admin/belanja/satker/akun/7" class="">Akun</a></li>
+                                </ul>
+                            </li>
+
+
+
+
+                        </ul>
+                    </li>
+
+
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title " href="#">
+                            <i data-feather="trending-up"></i><span>Prognosa </span>
+                            <div class="according-menu"><i class="fa fa-angle-right"></i></div>
+                        </a>
+                        <ul class="sidebar-submenu" style="display: none;">
+                            <li>
+                                <a class="submenu-title " href="#">Eselon 1
+                                    <div class="according-menu"><i class="fa fa-angle-right"></i></div>
+                                </a>
+                                <ul class="nav-sub-childmenu submenu-content" style="display: none;">
+                                    <li><a href="http://app-monira.test/admin/prognosa/eselon1/belanja" class="">Belanja</a></li>
+                                    <li><a href="http://app-monira.test/admin/prognosa/eselon1/sumberdana" class="">Sumber Dana</a></li>
+                                    <li><a href="http://app-monira.test/admin/prognosa/eselon1/kegiatan" class="">Kegiatan</a></li>
+                                    <li><a href="http://app-monira.test/admin/prognosa/eselon1/output" class="">Output</a></li>
+                                    
+                                    <li><a href="http://app-monira.test/admin/prognosa/eselon1/kewenangan" class="">Kewenangan</a></li>
+                                    <li><a href="http://app-monira.test/admin/prognosa/eselon1/akun" class="">Akun</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a class="submenu-title " href="#">Propinsi
+                                    <div class="according-menu"><i class="fa fa-angle-right"></i></div>
+                                </a>
+                                <ul class="nav-sub-childmenu submenu-content" style="display: none;">
+                                    <li><a href="http://app-monira.test/admin/prognosa/propinsi/belanja" class="">Belanja</a></li>
+                                    <li><a href="http://app-monira.test/admin/prognosa/propinsi/sumberdana" class="">Sumber Dana</a></li>
+                                    <li><a href="http://app-monira.test/admin/prognosa/propinsi/kegiatan" class="">Kegiatan</a></li>
+                                    <li><a href="http://app-monira.test/admin/prognosa/propinsi/output" class="">Output</a></li>
+                                    
+                                    <li><a href="http://app-monira.test/admin/prognosa/propinsi/kewenangan" class="">Kewenangan</a></li>
+                                    <li><a href="http://app-monira.test/admin/prognosa/propinsi/akun" class="">Akun</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="submenu-title " href="#">Satker
+                                    <div class="according-menu"><i class="fa fa-angle-right"></i></div>
+                                </a>
+                                <ul class="nav-sub-childmenu submenu-content" style="display: none;">
+                                    <li><a href="http://app-monira.test/admin/prognosa/satker/belanja" class="">Belanja</a></li>
+                                    <li><a href="http://app-monira.test/admin/prognosa/satker/sumberdana" class="">Sumber Dana</a></li>
+                                    <li><a href="http://app-monira.test/admin/prognosa/satker/kegiatan" class="">Kegiatan</a></li>
+                                    <li><a href="http://app-monira.test/admin/prognosa/satker/output" class="">Output</a></li>
+                                    
+                                    <li><a href="http://app-monira.test/admin/prognosa/satker/kewenangan" class="">Kewenangan</a></li>
+                                    <li><a href="http://app-monira.test/admin/prognosa/satker/akun" class="">Akun</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+					<li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav " href="http://app-monira.test/admin/pivot"><i data-feather="database"> </i><span>Pivot Data</span></a></li>
+					<li class="sidebar-list">
+						<a class="sidebar-link sidebar-title " href="#"><i data-feather="upload-cloud"></i><span>Upload</span>
+								<div class="according-menu"><i class="fa fa-angle-right"></i></div>
+						</a>
+						<ul class="sidebar-submenu" style="display: none;">
+							<li><a href="http://app-monira.test/admin/upload/dipa" class="">SPAN DIPA</a></li>
+	                        <li><a href="http://app-monira.test/admin/upload/realisasi" class="">SPAN Belanja</a></li>
+	                        <li><a href="http://app-monira.test/admin/upload/penerimaan" class="">SPAN PNBP</a></li>
+	                        <li><a href="http://app-monira.test/admin/upload/mp" class="">Alokasi MP</a></li>
+						</ul>
+					</li>
+                    
+                    
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav " href="http://app-monira.test/admin/profile"><i data-feather="user"> </i><span>Profile</span></a></li>
+					<li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav " href="http://app-monira.test/logout"><i data-feather="log-out"> </i><span>Logout</span></a></li>
+				</ul>
+			</div>
+			<div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
+		</nav>
+	</div>
+</div>
+TES
+
+        <!-- Page Sidebar Ends-->
+        <div class="page-body">
+          <div class="container-fluid">
+            <div class="page-title">
+              <div class="row">
+                <div class="col-6">
+                  
+                </div>
+                <div class="col-6">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="http://app-monira.test"> <i data-feather="home"></i></a></li>
+                    <li class="breadcrumb-item">Belanja</li>
+<li class="breadcrumb-item">Propinsi</li>
+<li class="breadcrumb-item active">belanja</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Container-fluid starts-->
+          <div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="card">
+                <div class="card-header card-no-border">
+                    <div class="header-top">
+                      <h5 class="m-0">belanja Per propinsi
+                      </h5>
+
+                      <div class="card-header-right-icon">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="dropdown">
+                                <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">Juli</button>
+                                <div class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="dropdownMenuButton" style="">
+                                                                        <a class="dropdown-item " href="http://app-monira.test/admin/belanja/propinsi/belanja/1">Januari</a>
+                                                                        <a class="dropdown-item " href="http://app-monira.test/admin/belanja/propinsi/belanja/2">Februari</a>
+                                                                        <a class="dropdown-item " href="http://app-monira.test/admin/belanja/propinsi/belanja/3">Maret</a>
+                                                                        <a class="dropdown-item " href="http://app-monira.test/admin/belanja/propinsi/belanja/4">April</a>
+                                                                        <a class="dropdown-item " href="http://app-monira.test/admin/belanja/propinsi/belanja/5">Mei</a>
+                                                                        <a class="dropdown-item " href="http://app-monira.test/admin/belanja/propinsi/belanja/6">Juni</a>
+                                                                        <a class="dropdown-item  bg-danger text-white " href="http://app-monira.test/admin/belanja/propinsi/belanja/7">Juli</a>
+                                                                        <a class="dropdown-item " href="http://app-monira.test/admin/belanja/propinsi/belanja/8">Agustus</a>
+                                                                        <a class="dropdown-item " href="http://app-monira.test/admin/belanja/propinsi/belanja/9">September</a>
+                                                                        <a class="dropdown-item " href="http://app-monira.test/admin/belanja/propinsi/belanja/10">Oktober</a>
+                                                                        <a class="dropdown-item " href="http://app-monira.test/admin/belanja/propinsi/belanja/11">November</a>
+                                                                        <a class="dropdown-item " href="http://app-monira.test/admin/belanja/propinsi/belanja/12">Desember</a>
+                                                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="export p-1">
+                                    <i data-feather="printer" class="exportbtn text-primary"></i>
+                                    <div class="export-content">
+                                        <a target="_blank" href="http://app-monira.test/admin/reportSpending/excell/propinsi/belanja/7">Excell</a>
+                                        <a target="_blank" href="http://app-monira.test/admin/reportSpending/pdf/propinsi/belanja/7">Pdf</a>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                      </div>
+
+                    </div>
+                </div>
+                    <div class="table-responsive">
+						<table class="table table-sm" id="page-all">
+							<thead class="bg-primary">
+								<tr>
+									<th class="text-center">NO</th>
+									<th class="text-start">KODE</th>
+									<th class="text-start">KETERANGAN</th>
+									<th class="text-end">PAGU AWAL</th>
+									<th class="text-end">PAGU AKHIR</th>
+									<th class="text-end">REALISASI</th>
+									<th class="text-center">%</th>
+								</tr>
+							</thead>
+							<tbody>
+                                                                                                <tr class="table-danger">
+									<td class="text-center"><b>01</b></td>
+									<td class="text-start" colspan="7"><b>DKI JAKARTA</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">300.536.956.000</td>
+									<td class="text-end">285.277.443.000</td>
+									<td class="text-end">135.843.364.299</td>
+									<td class="text-center">47,62%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">1.695.695.548.000</td>
+									<td class="text-end">1.698.595.548.000</td>
+									<td class="text-end">282.500.280.572</td>
+									<td class="text-center">16,63%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">532.876.655.000</td>
+									<td class="text-end">532.876.655.000</td>
+									<td class="text-end">130.176.929.181</td>
+									<td class="text-center">24,43%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">2.529.109.159.000</th>
+                                    <th class="text-end">2.516.749.646.000</th>
+                                    <th class="text-end">548.520.574.052</th>
+                                    <th class="text-center">21,79%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>02</b></td>
+									<td class="text-start" colspan="7"><b>JAWA BARAT</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">22.206.989.000</td>
+									<td class="text-end">21.622.871.000</td>
+									<td class="text-end">10.930.718.772</td>
+									<td class="text-center">50,55%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">21.091.878.000</td>
+									<td class="text-end">21.091.878.000</td>
+									<td class="text-end">12.112.593.089</td>
+									<td class="text-center">57,43%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">1.838.353.106.000</td>
+									<td class="text-end">1.838.353.106.000</td>
+									<td class="text-end">143.177.624.238</td>
+									<td class="text-center">7,79%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">1.881.651.973.000</th>
+                                    <th class="text-end">1.881.067.855.000</th>
+                                    <th class="text-end">166.220.936.099</th>
+                                    <th class="text-center">8,84%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>03</b></td>
+									<td class="text-start" colspan="7"><b>JAWA TENGAH</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">108.659.201.000</td>
+									<td class="text-end">100.161.637.000</td>
+									<td class="text-end">50.256.602.553</td>
+									<td class="text-center">50,18%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">51.494.110.000</td>
+									<td class="text-end">51.494.110.000</td>
+									<td class="text-end">20.638.689.829</td>
+									<td class="text-center">40,08%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">36.528.655.000</td>
+									<td class="text-end">36.528.655.000</td>
+									<td class="text-end">13.757.920.140</td>
+									<td class="text-center">37,66%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">196.681.966.000</th>
+                                    <th class="text-end">188.184.402.000</th>
+                                    <th class="text-end">84.653.212.522</th>
+                                    <th class="text-center">44,98%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>05</b></td>
+									<td class="text-start" colspan="7"><b>JAWA TIMUR</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">147.189.291.000</td>
+									<td class="text-end">137.737.258.000</td>
+									<td class="text-end">67.126.107.425</td>
+									<td class="text-center">48,73%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">114.492.516.000</td>
+									<td class="text-end">114.492.516.000</td>
+									<td class="text-end">45.316.771.624</td>
+									<td class="text-center">39,58%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">49.070.696.000</td>
+									<td class="text-end">49.070.696.000</td>
+									<td class="text-end">24.035.329.460</td>
+									<td class="text-center">48,98%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">310.752.503.000</th>
+                                    <th class="text-end">301.300.470.000</th>
+                                    <th class="text-end">136.478.208.509</th>
+                                    <th class="text-center">45,30%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>06</b></td>
+									<td class="text-start" colspan="7"><b>ACEH</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">40.811.589.000</td>
+									<td class="text-end">37.819.184.000</td>
+									<td class="text-end">18.750.178.233</td>
+									<td class="text-center">49,58%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">40.396.129.000</td>
+									<td class="text-end">40.396.129.000</td>
+									<td class="text-end">20.480.822.234</td>
+									<td class="text-center">50,70%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">10.194.075.000</td>
+									<td class="text-end">10.194.075.000</td>
+									<td class="text-end">4.073.370.453</td>
+									<td class="text-center">39,96%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">91.401.793.000</th>
+                                    <th class="text-end">88.409.388.000</th>
+                                    <th class="text-end">43.304.370.920</th>
+                                    <th class="text-center">48,98%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>07</b></td>
+									<td class="text-start" colspan="7"><b>SUMATERA UTARA</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">114.875.824.000</td>
+									<td class="text-end">106.819.434.000</td>
+									<td class="text-end">52.695.774.886</td>
+									<td class="text-center">49,33%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">76.423.625.000</td>
+									<td class="text-end">76.573.625.000</td>
+									<td class="text-end">30.639.394.218</td>
+									<td class="text-center">40,01%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">18.137.890.000</td>
+									<td class="text-end">18.137.890.000</td>
+									<td class="text-end">6.019.443.952</td>
+									<td class="text-center">33,19%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">209.437.339.000</th>
+                                    <th class="text-end">201.530.949.000</th>
+                                    <th class="text-end">89.354.613.056</th>
+                                    <th class="text-center">44,34%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>08</b></td>
+									<td class="text-start" colspan="7"><b>SUMATERA BARAT</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">46.102.093.000</td>
+									<td class="text-end">43.873.920.000</td>
+									<td class="text-end">21.081.734.461</td>
+									<td class="text-center">48,05%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">36.889.473.000</td>
+									<td class="text-end">36.889.473.000</td>
+									<td class="text-end">18.442.608.255</td>
+									<td class="text-center">49,99%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">37.445.392.000</td>
+									<td class="text-end">37.445.392.000</td>
+									<td class="text-end">13.042.528.000</td>
+									<td class="text-center">34,83%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">120.436.958.000</th>
+                                    <th class="text-end">118.208.785.000</th>
+                                    <th class="text-end">52.566.870.716</th>
+                                    <th class="text-center">44,47%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>09</b></td>
+									<td class="text-start" colspan="7"><b>RIAU</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">73.181.644.000</td>
+									<td class="text-end">70.331.519.000</td>
+									<td class="text-end">32.824.748.828</td>
+									<td class="text-center">46,67%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">43.743.764.000</td>
+									<td class="text-end">43.743.764.000</td>
+									<td class="text-end">19.072.026.215</td>
+									<td class="text-center">43,60%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">46.175.655.000</td>
+									<td class="text-end">46.175.655.000</td>
+									<td class="text-end">22.925.713.805</td>
+									<td class="text-center">49,65%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">163.101.063.000</th>
+                                    <th class="text-end">160.250.938.000</th>
+                                    <th class="text-end">74.822.488.848</th>
+                                    <th class="text-center">46,69%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>10</b></td>
+									<td class="text-start" colspan="7"><b>JAMBI</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">12.620.308.000</td>
+									<td class="text-end">12.046.919.000</td>
+									<td class="text-end">5.471.958.430</td>
+									<td class="text-center">45,42%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">7.253.000.000</td>
+									<td class="text-end">7.253.000.000</td>
+									<td class="text-end">3.416.054.472</td>
+									<td class="text-center">47,10%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">1.679.234.000</td>
+									<td class="text-end">1.679.234.000</td>
+									<td class="text-end">861.671.500</td>
+									<td class="text-center">51,31%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">21.552.542.000</th>
+                                    <th class="text-end">20.979.153.000</th>
+                                    <th class="text-end">9.749.684.402</th>
+                                    <th class="text-center">46,47%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>11</b></td>
+									<td class="text-start" colspan="7"><b>SUMATERA SELATAN</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">35.869.465.000</td>
+									<td class="text-end">33.657.744.000</td>
+									<td class="text-end">16.186.416.940</td>
+									<td class="text-center">48,09%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">29.050.212.000</td>
+									<td class="text-end">29.050.212.000</td>
+									<td class="text-end">10.687.293.892</td>
+									<td class="text-center">36,79%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">91.031.905.000</td>
+									<td class="text-end">91.031.905.000</td>
+									<td class="text-end">4.441.900.000</td>
+									<td class="text-center">4,88%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">155.951.582.000</th>
+                                    <th class="text-end">153.739.861.000</th>
+                                    <th class="text-end">31.315.610.832</th>
+                                    <th class="text-center">20,37%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>12</b></td>
+									<td class="text-start" colspan="7"><b>LAMPUNG</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">29.995.697.000</td>
+									<td class="text-end">27.751.915.000</td>
+									<td class="text-end">14.142.780.300</td>
+									<td class="text-center">50,96%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">10.982.166.000</td>
+									<td class="text-end">10.982.166.000</td>
+									<td class="text-end">4.018.439.794</td>
+									<td class="text-center">36,59%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">117.500.000</td>
+									<td class="text-end">117.500.000</td>
+									<td class="text-end">104.950.000</td>
+									<td class="text-center">89,32%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">41.095.363.000</th>
+                                    <th class="text-end">38.851.581.000</th>
+                                    <th class="text-end">18.266.170.094</th>
+                                    <th class="text-center">47,02%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>13</b></td>
+									<td class="text-start" colspan="7"><b>KALIMANTAN BARAT</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">35.759.097.000</td>
+									<td class="text-end">33.148.593.000</td>
+									<td class="text-end">16.215.477.747</td>
+									<td class="text-center">48,92%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">42.723.536.000</td>
+									<td class="text-end">42.844.356.000</td>
+									<td class="text-end">21.444.349.184</td>
+									<td class="text-center">50,05%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">16.520.147.000</td>
+									<td class="text-end">16.520.147.000</td>
+									<td class="text-end">4.316.174.300</td>
+									<td class="text-center">26,13%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">95.002.780.000</th>
+                                    <th class="text-end">92.513.096.000</th>
+                                    <th class="text-end">41.976.001.231</th>
+                                    <th class="text-center">45,37%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>14</b></td>
+									<td class="text-start" colspan="7"><b>KALIMANTAN TENGAH</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">23.180.859.000</td>
+									<td class="text-end">22.135.846.000</td>
+									<td class="text-end">10.972.502.957</td>
+									<td class="text-center">49,57%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">17.027.341.000</td>
+									<td class="text-end">17.027.341.000</td>
+									<td class="text-end">7.055.872.679</td>
+									<td class="text-center">41,44%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">3.606.230.000</td>
+									<td class="text-end">3.606.230.000</td>
+									<td class="text-end">1.066.813.000</td>
+									<td class="text-center">29,58%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">43.814.430.000</th>
+                                    <th class="text-end">42.769.417.000</th>
+                                    <th class="text-end">19.095.188.636</th>
+                                    <th class="text-center">44,65%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>15</b></td>
+									<td class="text-start" colspan="7"><b>KALIMANTAN SELATAN</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">44.629.118.000</td>
+									<td class="text-end">41.455.971.000</td>
+									<td class="text-end">19.863.383.111</td>
+									<td class="text-center">47,91%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">35.944.073.000</td>
+									<td class="text-end">35.944.073.000</td>
+									<td class="text-end">18.545.816.756</td>
+									<td class="text-center">51,60%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">54.247.065.000</td>
+									<td class="text-end">54.247.065.000</td>
+									<td class="text-end">12.985.535.033</td>
+									<td class="text-center">23,94%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">134.820.256.000</th>
+                                    <th class="text-end">131.647.109.000</th>
+                                    <th class="text-end">51.394.734.900</th>
+                                    <th class="text-center">39,04%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>16</b></td>
+									<td class="text-start" colspan="7"><b>KALIMANTAN TIMUR</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">57.255.511.000</td>
+									<td class="text-end">53.966.028.000</td>
+									<td class="text-end">26.275.700.397</td>
+									<td class="text-center">48,69%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">52.210.978.000</td>
+									<td class="text-end">52.210.978.000</td>
+									<td class="text-end">21.997.043.174</td>
+									<td class="text-center">42,13%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">92.109.951.000</td>
+									<td class="text-end">92.109.951.000</td>
+									<td class="text-end">48.688.022.852</td>
+									<td class="text-center">52,86%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">201.576.440.000</th>
+                                    <th class="text-end">198.286.957.000</th>
+                                    <th class="text-end">96.960.766.423</th>
+                                    <th class="text-center">48,90%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>17</b></td>
+									<td class="text-start" colspan="7"><b>SULAWESI UTARA</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">72.601.343.000</td>
+									<td class="text-end">70.231.676.000</td>
+									<td class="text-end">32.508.491.839</td>
+									<td class="text-center">46,29%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">74.798.818.000</td>
+									<td class="text-end">74.798.818.000</td>
+									<td class="text-end">34.870.448.852</td>
+									<td class="text-center">46,62%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">68.969.132.000</td>
+									<td class="text-end">68.969.132.000</td>
+									<td class="text-end">13.327.114.758</td>
+									<td class="text-center">19,32%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">216.369.293.000</th>
+                                    <th class="text-end">213.999.626.000</th>
+                                    <th class="text-end">80.706.055.449</th>
+                                    <th class="text-center">37,71%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>18</b></td>
+									<td class="text-start" colspan="7"><b>SULAWESI TENGAH</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">35.009.502.000</td>
+									<td class="text-end">32.541.714.000</td>
+									<td class="text-end">15.323.341.415</td>
+									<td class="text-center">47,09%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">94.434.756.000</td>
+									<td class="text-end">94.434.756.000</td>
+									<td class="text-end">55.387.792.121</td>
+									<td class="text-center">58,65%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">21.595.159.000</td>
+									<td class="text-end">21.595.159.000</td>
+									<td class="text-end">5.271.379.009</td>
+									<td class="text-center">24,41%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">151.039.417.000</th>
+                                    <th class="text-end">148.571.629.000</th>
+                                    <th class="text-end">75.982.512.545</th>
+                                    <th class="text-center">51,14%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>19</b></td>
+									<td class="text-start" colspan="7"><b>SULAWESI SELATAN</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">120.495.730.000</td>
+									<td class="text-end">112.450.238.000</td>
+									<td class="text-end">55.015.041.322</td>
+									<td class="text-center">48,92%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">91.537.623.000</td>
+									<td class="text-end">91.537.623.000</td>
+									<td class="text-end">36.814.539.240</td>
+									<td class="text-center">40,22%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">178.741.000.000</td>
+									<td class="text-end">178.741.000.000</td>
+									<td class="text-end">62.730.471.979</td>
+									<td class="text-center">35,10%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">390.774.353.000</th>
+                                    <th class="text-end">382.728.861.000</th>
+                                    <th class="text-end">154.560.052.541</th>
+                                    <th class="text-center">40,38%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>20</b></td>
+									<td class="text-start" colspan="7"><b>SULAWESI TENGGARA</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">48.031.771.000</td>
+									<td class="text-end">46.548.397.000</td>
+									<td class="text-end">23.774.696.058</td>
+									<td class="text-center">51,08%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">83.515.221.000</td>
+									<td class="text-end">83.515.221.000</td>
+									<td class="text-end">43.999.128.379</td>
+									<td class="text-center">52,68%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">38.901.982.000</td>
+									<td class="text-end">38.901.982.000</td>
+									<td class="text-end">18.824.799.101</td>
+									<td class="text-center">48,39%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">170.448.974.000</th>
+                                    <th class="text-end">168.965.600.000</th>
+                                    <th class="text-end">86.598.623.538</th>
+                                    <th class="text-center">51,25%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>21</b></td>
+									<td class="text-start" colspan="7"><b>MALUKU</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">95.048.423.000</td>
+									<td class="text-end">89.303.115.000</td>
+									<td class="text-end">43.960.403.445</td>
+									<td class="text-center">49,23%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">194.136.280.000</td>
+									<td class="text-end">194.136.280.000</td>
+									<td class="text-end">92.876.354.774</td>
+									<td class="text-center">47,84%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">226.111.634.000</td>
+									<td class="text-end">226.111.634.000</td>
+									<td class="text-end">40.783.156.148</td>
+									<td class="text-center">18,04%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">515.296.337.000</th>
+                                    <th class="text-end">509.551.029.000</th>
+                                    <th class="text-end">177.619.914.367</th>
+                                    <th class="text-center">34,86%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>22</b></td>
+									<td class="text-start" colspan="7"><b>BALI</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">55.797.585.000</td>
+									<td class="text-end">51.273.520.000</td>
+									<td class="text-end">25.129.606.629</td>
+									<td class="text-center">49,01%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">45.798.603.000</td>
+									<td class="text-end">45.798.603.000</td>
+									<td class="text-end">19.849.795.003</td>
+									<td class="text-center">43,34%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">120.356.930.000</td>
+									<td class="text-end">120.356.930.000</td>
+									<td class="text-end">15.999.908.712</td>
+									<td class="text-center">13,29%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">221.953.118.000</th>
+                                    <th class="text-end">217.429.053.000</th>
+                                    <th class="text-end">60.979.310.344</th>
+                                    <th class="text-center">28,05%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>23</b></td>
+									<td class="text-start" colspan="7"><b>NUSA TENGGARA BARAT</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">23.508.535.000</td>
+									<td class="text-end">22.170.885.000</td>
+									<td class="text-end">10.866.398.268</td>
+									<td class="text-center">49,01%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">44.547.942.000</td>
+									<td class="text-end">44.547.942.000</td>
+									<td class="text-end">29.211.061.921</td>
+									<td class="text-center">65,57%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">15.051.000.000</td>
+									<td class="text-end">15.051.000.000</td>
+									<td class="text-end">3.147.619.860</td>
+									<td class="text-center">20,91%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">83.107.477.000</th>
+                                    <th class="text-end">81.769.827.000</th>
+                                    <th class="text-end">43.225.080.049</th>
+                                    <th class="text-center">52,86%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>24</b></td>
+									<td class="text-start" colspan="7"><b>NUSA TENGGARA TIMUR</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">51.267.671.000</td>
+									<td class="text-end">48.260.518.000</td>
+									<td class="text-end">23.141.306.239</td>
+									<td class="text-center">47,95%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">112.886.176.000</td>
+									<td class="text-end">112.886.176.000</td>
+									<td class="text-end">56.090.362.875</td>
+									<td class="text-center">49,69%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">238.602.201.000</td>
+									<td class="text-end">238.602.201.000</td>
+									<td class="text-end">87.218.970.151</td>
+									<td class="text-center">36,55%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">402.756.048.000</th>
+                                    <th class="text-end">399.748.895.000</th>
+                                    <th class="text-end">166.450.639.265</th>
+                                    <th class="text-center">41,64%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>25</b></td>
+									<td class="text-start" colspan="7"><b>PAPUA</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">62.366.158.000</td>
+									<td class="text-end">58.969.803.000</td>
+									<td class="text-end">28.094.143.914</td>
+									<td class="text-center">47,64%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">98.397.111.000</td>
+									<td class="text-end">98.397.111.000</td>
+									<td class="text-end">36.945.416.524</td>
+									<td class="text-center">37,55%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">52.546.081.000</td>
+									<td class="text-end">52.546.081.000</td>
+									<td class="text-end">14.183.576.470</td>
+									<td class="text-center">26,99%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">213.309.350.000</th>
+                                    <th class="text-end">209.912.995.000</th>
+                                    <th class="text-end">79.223.136.908</th>
+                                    <th class="text-center">37,74%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>26</b></td>
+									<td class="text-start" colspan="7"><b>BENGKULU</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">8.052.200.000</td>
+									<td class="text-end">7.816.883.000</td>
+									<td class="text-end">4.879.530.194</td>
+									<td class="text-center">62,42%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">5.120.158.000</td>
+									<td class="text-end">5.120.158.000</td>
+									<td class="text-end">2.121.559.033</td>
+									<td class="text-center">41,44%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">2.400.901.000</td>
+									<td class="text-end">2.400.901.000</td>
+									<td class="text-end">57.440.000</td>
+									<td class="text-center">2,39%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">15.573.259.000</th>
+                                    <th class="text-end">15.337.942.000</th>
+                                    <th class="text-end">7.058.529.227</th>
+                                    <th class="text-center">46,02%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>28</b></td>
+									<td class="text-start" colspan="7"><b>MALUKU UTARA</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">33.082.523.000</td>
+									<td class="text-end">31.477.951.000</td>
+									<td class="text-end">15.409.917.307</td>
+									<td class="text-center">48,95%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">82.541.250.000</td>
+									<td class="text-end">82.541.250.000</td>
+									<td class="text-end">42.770.516.483</td>
+									<td class="text-center">51,82%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">40.255.233.000</td>
+									<td class="text-end">40.255.233.000</td>
+									<td class="text-end">17.407.164.074</td>
+									<td class="text-center">43,24%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">155.879.006.000</th>
+                                    <th class="text-end">154.274.434.000</th>
+                                    <th class="text-end">75.587.597.864</th>
+                                    <th class="text-center">49,00%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>29</b></td>
+									<td class="text-start" colspan="7"><b>BANTEN</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">20.644.587.000</td>
+									<td class="text-end">19.610.138.000</td>
+									<td class="text-end">9.314.209.814</td>
+									<td class="text-center">47,50%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">11.479.045.000</td>
+									<td class="text-end">11.479.045.000</td>
+									<td class="text-end">4.971.422.438</td>
+									<td class="text-center">43,31%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">131.525.000</td>
+									<td class="text-end">131.525.000</td>
+									<td class="text-end">131.225.000</td>
+									<td class="text-center">99,77%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">32.255.157.000</th>
+                                    <th class="text-end">31.220.708.000</th>
+                                    <th class="text-end">14.416.857.252</th>
+                                    <th class="text-center">46,18%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>30</b></td>
+									<td class="text-start" colspan="7"><b>KEPULAUAN BANGKA BELITUNG</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">11.307.441.000</td>
+									<td class="text-end">10.994.890.000</td>
+									<td class="text-end">5.521.668.645</td>
+									<td class="text-center">50,22%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">8.711.404.000</td>
+									<td class="text-end">8.711.404.000</td>
+									<td class="text-end">3.391.907.567</td>
+									<td class="text-center">38,94%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">45.191.405.000</td>
+									<td class="text-end">45.191.405.000</td>
+									<td class="text-end">23.652.162.800</td>
+									<td class="text-center">52,34%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">65.210.250.000</th>
+                                    <th class="text-end">64.897.699.000</th>
+                                    <th class="text-end">32.565.739.012</th>
+                                    <th class="text-center">50,18%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>31</b></td>
+									<td class="text-start" colspan="7"><b>GORONTALO</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">9.051.499.000</td>
+									<td class="text-end">8.787.228.000</td>
+									<td class="text-end">4.401.026.120</td>
+									<td class="text-center">50,08%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">29.479.378.000</td>
+									<td class="text-end">29.479.378.000</td>
+									<td class="text-end">19.956.562.974</td>
+									<td class="text-center">67,70%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">3.116.805.000</td>
+									<td class="text-end">3.116.805.000</td>
+									<td class="text-end">1.974.820.200</td>
+									<td class="text-center">63,36%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">41.647.682.000</th>
+                                    <th class="text-end">41.383.411.000</th>
+                                    <th class="text-end">26.332.409.294</th>
+                                    <th class="text-center">63,63%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>32</b></td>
+									<td class="text-start" colspan="7"><b>KEPULAUAN RIAU</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">100.841.791.000</td>
+									<td class="text-end">95.274.066.000</td>
+									<td class="text-end">46.297.323.962</td>
+									<td class="text-center">48,59%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">88.558.597.000</td>
+									<td class="text-end">88.558.597.000</td>
+									<td class="text-end">40.017.471.113</td>
+									<td class="text-center">45,19%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">49.476.040.000</td>
+									<td class="text-end">49.476.040.000</td>
+									<td class="text-end">4.459.405.246</td>
+									<td class="text-center">9,01%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">238.876.428.000</th>
+                                    <th class="text-end">233.308.703.000</th>
+                                    <th class="text-end">90.774.200.321</th>
+                                    <th class="text-center">38,91%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>33</b></td>
+									<td class="text-start" colspan="7"><b>PAPUA BARAT</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">51.813.115.000</td>
+									<td class="text-end">47.651.563.000</td>
+									<td class="text-end">23.016.242.472</td>
+									<td class="text-center">48,30%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">100.547.006.000</td>
+									<td class="text-end">100.547.006.000</td>
+									<td class="text-end">41.052.630.375</td>
+									<td class="text-center">40,83%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">75.727.006.000</td>
+									<td class="text-end">75.727.006.000</td>
+									<td class="text-end">23.514.011.539</td>
+									<td class="text-center">31,05%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">228.087.127.000</th>
+                                    <th class="text-end">223.925.575.000</th>
+                                    <th class="text-end">87.582.884.386</th>
+                                    <th class="text-center">39,11%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>34</b></td>
+									<td class="text-start" colspan="7"><b>SULAWESI BARAT</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">10.617.914.000</td>
+									<td class="text-end">9.987.165.000</td>
+									<td class="text-end">4.855.385.150</td>
+									<td class="text-center">48,62%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">15.437.322.000</td>
+									<td class="text-end">15.437.322.000</td>
+									<td class="text-end">7.456.620.922</td>
+									<td class="text-center">48,30%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">61.952.456.000</td>
+									<td class="text-end">61.952.456.000</td>
+									<td class="text-end">19.531.771.500</td>
+									<td class="text-center">31,53%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">88.007.692.000</th>
+                                    <th class="text-end">87.376.943.000</th>
+                                    <th class="text-end">31.843.777.572</th>
+                                    <th class="text-center">36,44%</th>
+                                </tr>
+
+                                
+                                                                <tr class="table-danger">
+									<td class="text-center"><b>35</b></td>
+									<td class="text-start" colspan="7"><b>KALIMANTAN UTARA</b></td>
+                                </tr>
+                                                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">51</td>
+									<td class="text-start">Belanja Pegawai</td>
+									<td class="text-end">24.603.813.000</td>
+									<td class="text-end">24.183.833.000</td>
+									<td class="text-end">11.144.582.808</td>
+									<td class="text-center">46,08%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">52</td>
+									<td class="text-start">Belanja Barang</td>
+									<td class="text-end">26.895.436.000</td>
+									<td class="text-end">26.895.436.000</td>
+									<td class="text-end">13.329.561.581</td>
+									<td class="text-center">49,56%</td>
+								</tr>
+                                                                                                <tr>
+									<td class="text-center"></td>
+									<td class="text-center">53</td>
+									<td class="text-start">Belanja Modal</td>
+									<td class="text-end">5.294.474.000</td>
+									<td class="text-end">5.294.474.000</td>
+									<td class="text-end">1.847.190.000</td>
+									<td class="text-center">34,89%</td>
+								</tr>
+                                
+                                <tr class="border-top-primary">
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH</th>
+                                    <th class="text-end">56.793.723.000</th>
+                                    <th class="text-end">56.373.743.000</th>
+                                    <th class="text-end">26.321.334.389</th>
+                                    <th class="text-center">46,69%</th>
+                                </tr>
+
+                                
+                                							</tbody>
+                            <tfoot class="table-primary">
+								<tr>
+									<th class="text-center"></th>
+									<th class="text-start"></th>
+									<th class="text-start">JUMLAH RAYA</th>
+									<th class="text-end">9.483.770.838.000</th>
+									<th class="text-end">9.375.266.280.000</th>
+									<th class="text-end">2.782.508.085.563</th>
+									<th class="text-center">29,68%</th>
+								</tr>
+                            </tfoot>
+						</table>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+          <!-- Container-fluid Ends-->
+        </div>
+        <!-- footer start-->
+        <footer class="footer">
+	  <div class="container-fluid">
+		    <div class="row">
+			      <div class="col-md-12 footer-copyright text-center">
+			        	<p class="mb-0">Copyright 2021 © Bagian Keuangan DJPL  </p>
+			      </div>
+		    </div>
+	  </div>
+</footer>
+
+      </div>
+    </div>
+    <!-- latest jquery-->
+    <script src="http://app-monira.test/assets/js/jquery-3.5.1.min.js"></script>
+<!-- Bootstrap js-->
+<script src="http://app-monira.test/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+<!-- feather icon js-->
+<script src="http://app-monira.test/assets/js/icons/feather-icon/feather.min.js"></script>
+<script src="http://app-monira.test/assets/js/icons/feather-icon/feather-icon.js"></script>
+<!-- scrollbar js-->
+<script src="http://app-monira.test/assets/js/scrollbar/simplebar.js"></script>
+<script src="http://app-monira.test/assets/js/scrollbar/custom.js"></script>
+<!-- Sidebar jquery-->
+<script src="http://app-monira.test/assets/js/config.js"></script>
+<!-- Plugins JS start-->
+<script id="menu" src="http://app-monira.test/assets/js/sidebar-menu.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/dataTables.buttons.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/jszip.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/buttons.colVis.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/pdfmake.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/vfs_fonts.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/dataTables.autoFill.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/dataTables.select.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/buttons.bootstrap4.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/buttons.html5.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/buttons.print.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/dataTables.bootstrap4.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/dataTables.responsive.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/responsive.bootstrap4.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/dataTables.keyTable.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/dataTables.colReorder.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/dataTables.fixedHeader.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/dataTables.rowReorder.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/dataTables.scroller.min.js"></script>
+<script src="http://app-monira.test/assets/js/datatable/datatable-extension/custom.js"></script>
+
+	<script src="http://app-monira.test/assets/js/tooltip-init.js"></script>
+
+<script type="text/javascript" src="http://app-monira.test/assets/js/grid/js/dx.all.js"></script>
+<!-- Plugins JS Ends-->
+<!-- Theme js-->
+<script src="http://app-monira.test/assets/js/script.js"></script>
+
+<script src="http://app-monira.test/assets/js/input-mask/jquery.inputmask.bundle.min.js"></script>
+<script src="http://app-monira.test/assets/js/input-mask/input-mask.js"></script>
+<script src="http://app-monira.test/assets/js/blockui/jquery.blockUI.min.js"></script>
+<script src="http://app-monira.test/assets/js/sweetalerts/sweetalert2.min.js"></script>
+<script src="http://app-monira.test/assets/js/dropzone/dropzone.js"></script>
+<script src="http://app-monira.test/assets/js/dropzone/dropzone-script.js"></script>
+<script src="http://app-monira.test/assets/js/select2/select2.full.min.js"></script>
+
+<script src="http://app-monira.test/assets/js/counter/jquery.waypoints.min.js"></script>
+<script src="http://app-monira.test/assets/js/counter/jquery.counterup.min.js"></script>
+<script src="http://app-monira.test/assets/js/counter/counter-custom.js"></script>
+<script src="http://app-monira.test/assets/js/popover-custom.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('body').on("submit", "#myform", function(e){
+            e.preventDefault();
+            var form = $("#myform").closest("form");
+            var formData = new FormData(form[0]);
+            var url = form.attr('action');
+            $.blockUI({
+            message: 'Updating Data',
+            fadeIn: 800,
+            overlayCSS: {
+                backgroundColor: '#1b2024',
+                opacity: 0.8,
+                zIndex: 1200,
+                cursor: 'wait'
+            },
+            css: {
+                border: 0,
+                color: '#fff',
+                zIndex: 1201,
+                padding: 0,
+                backgroundColor: 'transparent'
+            }
+        });
+
+            $.ajax({
+                processing: true,
+                serverSide: true,
+                processData: false,
+                contentType: false,
+                type: "POST",
+                url: url,
+                data: formData, // serializes the form's elements.
+                success: function(response)
+                {
+                    $(document).ready(function() {
+                        feather.replace();
+                    });
+                    $.unblockUI();
+                    Swal({title: "Berhasil", text: "Data Berhasil di Simpan", type:"success", timer: 100000});
+                    $("#card").load("#card");
+                    $('#open-modal').modal('hide');
+                    $("#page-all").load(" #page-all");
+                    $(".loadData").load(" .loadData");
+                }
+                });
+        });
+    });
+
+    $(".select").select2();
+
+// MODAL UNTUK SEMUA
+$(document).ready(function(){
+    $('body').on('click','.open-modal',function(){
+        $.blockUI({
+            message: '<svg> ... </svg>',
+            fadeIn: 800,
+            overlayCSS: {
+                backgroundColor: '#1b2024',
+                opacity: 0.8,
+                zIndex: 1200,
+                cursor: 'wait'
+            },
+            css: {
+                border: 0,
+                color: '#fff',
+                zIndex: 1201,
+                padding: 0,
+                backgroundColor: 'transparent'
+            }
+        });
+        var action     = $(this).attr("action");
+        var id         = $(this).attr("id");
+        var pagu       = $(this).attr("pagu");
+        var dana       = $(this).attr("dana");
+        var kegiatan   = $(this).attr("kegiatan");
+        var output     = $(this).attr("output");
+        var akun       = $(this).attr("akun");
+        var sisa       = $(this).attr("sisa");
+        $.ajax({
+            url    : '/satker/prognosa/modal/'+action+'/'+id,
+            method : "GET",
+            data   : {action:action,id:id,pagu:pagu,dana:dana,kegiatan:kegiatan,output:output,akun:akun,sisa:sisa},
+            cache  : false,
+            success: function(data){
+                $.unblockUI();
+                $('.modal-content-static').html(data);
+                $('.modal-content-static #id').val(id);
+                $('.modal-content-static #action').val(action);
+                $('.modal-content-static #pagu').val(pagu);
+                $('.modal-content-static .pagu').val(addCommas(pagu));
+                $('.modal-content-static .kegiatan').html(kegiatan);
+                $('.modal-content-static .output').html(output);
+                $('.modal-content-static .akun').html(akun);
+                $('.modal-content-static .dana').html(dana);
+                $('.modal-content-static .pagu').html(addCommas(pagu));
+                $('.modal-content-static #sisa').val(addCommas(sisa));
+                $('.enabled_12').prop('hidden', true);
+                $('.enabled_11').prop('hidden', true);
+                $('.enabled_10').prop('hidden', true);
+                $('.enabled_9').prop('hidden', true);
+                $('.enabled_8').prop('hidden', true);
+                $('.enabled_7').prop('hidden', true);
+                $('.enabled_6').prop('hidden', true);
+                $('.enabled_5').prop('hidden', true);
+                $('.enabled_4').prop('hidden', true);
+                $('.enabled_3').prop('hidden', true);
+                $('.enabled_2').prop('hidden', true);
+                $('.enabled_1').prop('hidden', true);
+                $('#open-modal').modal('show');
+                feather.replace();
+
+            }
+        });
+    });
+
+
+    $('body').on('click','.autofill',function(){
+        var pagu   = $("#pagu").val();
+        var value  = pagu/12;
+        var number = Math.trunc(value);
+        $('.prognosaValue').val(addCommas(number));
+
+        var sum  = 0;
+        $('.prognosaValue').each(function() {
+        sum += Number($(this).val().replace(/[^0-9]+/g,""));
+        });
+        var value = addCommas(sum);
+        $("#total").val(value);
+
+        var sisa = (pagu-sum);
+        $(".sisa").val(addCommas(sisa));
+    });
+
+    $('body').on('click','.resetfill',function(){
+        var value="";
+        // alert(value);
+        $('.prognosaValue').val(value);
+        $('.number').val(value);
+    });
+
+    $('body').on('blur','.prognosaValue',function(){
+        var pagu = $("#pagu").val();
+        var sum  = 0;
+        $('.prognosaValue').each(function() {
+        sum += Number($(this).val().replace(/[^0-9]+/g,""));
+        });
+        var value = addCommas(sum);
+        $("#total").val(value);
+        var sisa = (pagu-sum);
+        $(".sisa").val(addCommas(sisa));
+        // alert(sisa)
+        if(sisa<0) {
+            Swal({title: "Warning", text: "Total Prognosa Melebihi Pagu", type:"error", timer: 5000});
+            $('.submitPrognosa').prop('disabled', true);
+            $('.justifikasi').prop('disabled', true);
+            $('.newSection').prop('hidden', true);
+
+        } else if(sisa=0 || sisa < 100000) {
+            $('.justifikasi').prop('disabled', true);
+            $('.newSection').prop('hidden', true);
+            $('.submitPrognosa').prop('disabled', false);
+        } else {
+            $('.submitPrognosa').prop('disabled', false);
+            $('.newSection').prop('hidden', false);
+            $('.justifikasi').prop('disabled', false);
+            $(".newSection").html("<div style='font-size:14px;' required class='form-group mb-3 mt-3'><label class='col-form-label'>Justifikasi Prognosa Tidak 100%</label><textarea class='form-control justifikasi' name='justifikasi' id='justifikasi' rows='3'></textarea></div>");
+        }
+    });
+
+   //BULAN_1
+$('body').on('click','.week_list_1',function(){
+    $('.section_week_1').prop('hidden', false);
+    $(".section_week_1").html("<div style='font-size:12px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_1_minggu[]' placeholder='Prognosa Minggu 1' style='text-align:right; font-size:14px;' type='text' class='form-control prognosaValue number week_1'></div><div required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_1_minggu[]' placeholder='Prognosa Minggu 2' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_1'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_1_minggu[]' placeholder='Prognosa Minggu 3' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_1'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_1_minggu[]' placeholder='Prognosa Minggu 4' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_1'></div>");
+    $('.input_1').prop('hidden', true);
+    $('.start_1 a i').toggleClass("fa-plus-circle").toggleClass("fa-minus-circle out_1");
+    $('.input_1').val("");
+    $('.enabled_1').prop('hidden', true);
+    $('.enabled_1').prop( 'disabled', true);
+
+});
+$('body').on('click','.out_1',function(){
+    $('.input_1').prop('hidden', false);
+    $('.section_week_1').prop('hidden', true);
+    $('.week_1').prop( 'disabled', true);
+    $('.week_1').val("");
+    $('.week_1').prop('hidden', true);
+    $('.disabled_1').prop('hidden', true);
+    $('.disabled_1').prop( 'disabled', false);
+    $('.enabled_1').prop('hidden', false);
+    $('.enabled_1').prop( 'disabled', false);
+    $('.enabled_1').val("");
+    $(".section_week_1").html("");
+});
+
+   //BULAN_2
+$('body').on('click','.week_list_2',function(){
+    $('.section_week_2').prop('hidden', false);
+    $(".section_week_2").html("<div style='font-size:12px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_2_minggu[]' placeholder='Prognosa Minggu 1' style='text-align:right; font-size:14px;' type='text' class='form-control prognosaValue number week_2'></div><div required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_2_minggu[]' placeholder='Prognosa Minggu 2' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_2'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_2_minggu[]' placeholder='Prognosa Minggu 3' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_2'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_2_minggu[]' placeholder='Prognosa Minggu 4' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_2'></div>");
+    $('.input_2').prop('hidden', true);
+    $('.start_2 a i').toggleClass("fa-plus-circle").toggleClass("fa-minus-circle out_2");
+    $('.input_2').val("");
+    $('.enabled_2').prop('hidden', true);
+    $('.enabled_2').prop('disabled', true);
+
+});
+$('body').on('click','.out_2',function(){
+    $('.input_2').prop('hidden', false);
+    $('.section_week_2').prop('hidden', true);
+    $('.week_2').prop('disabled', true);
+    $('.disabled_2').prop('hidden', true);
+    $('.disabled_2').prop('disabled', false);
+    $('.enabled_2').prop('hidden', false);
+    $('.enabled_2').prop('disabled', false);
+    $('.enabled_2').val("");
+    $(".section_week_2").html("");
+
+});
+
+//BULAN_3
+$('body').on('click','.week_list_3',function(){
+    $('.section_week_3').prop('hidden', false);
+    $(".section_week_3").html("<div style='font-size:12px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_3_minggu[]' placeholder='Prognosa Minggu 1' style='text-align:right; font-size:14px;' type='text' class='form-control prognosaValue number week_3'></div><div required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_3_minggu[]' placeholder='Prognosa Minggu 2' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_3'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_3_minggu[]' placeholder='Prognosa Minggu 3' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_3'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_3_minggu[]' placeholder='Prognosa Minggu 4' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_3'></div>");
+    $('.input_3').prop('hidden', true);
+    $('.start_3 a i').toggleClass("fa-plus-circle").toggleClass("fa-minus-circle out_3");
+    $('.input_3').val("");
+    $('.enabled_3').prop('hidden', true);
+    $('.enabled_3').prop('disabled', true);
+
+});
+$('body').on('click','.out_3',function(){
+    $('.input_3').prop('hidden', false);
+    $('.section_week_3').prop('hidden', true);
+    $('.week_3').prop('disabled', true);
+    $('.disabled_3').prop('hidden', true);
+    $('.disabled_3').prop('disabled', false);
+    $('.enabled_3').prop('hidden', false);
+    $('.enabled_3').prop('disabled', false);
+    $('.enabled_3').val("");
+    $(".section_week_3").html("");
+
+});
+//BULAN_4
+$('body').on('click','.week_list_4',function(){
+    $('.section_week_4').prop('hidden', false);
+    $(".section_week_4").html("<div style='font-size:12px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_4_minggu[]' placeholder='Prognosa Minggu 1' style='text-align:right; font-size:14px;' type='text' class='form-control prognosaValue number week_4'></div><div required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_4_minggu[]' placeholder='Prognosa Minggu 2' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_4'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_4_minggu[]' placeholder='Prognosa Minggu 3' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_4'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_4_minggu[]' placeholder='Prognosa Minggu 4' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_4'></div>");
+    $('.input_4').prop('hidden', true);
+    $('.start_4 a i').toggleClass("fa-plus-circle").toggleClass("fa-minus-circle out_4");
+    $('.input_4').val("");
+    $('.enabled_4').prop('hidden', true);
+    $('.enabled_4').prop('disabled', true);
+
+});
+$('body').on('click','.out_4',function(){
+    $('.input_4').prop('hidden', false);
+    $('.section_week_4').prop('hidden', true);
+    $('.week_4').prop('disabled', true);
+    $('.disabled_4').prop('hidden', true);
+    $('.disabled_4').prop('disabled', false);
+    $('.enabled_4').prop('hidden', false);
+    $('.enabled_4').prop('disabled', false);
+    $('.enabled_4').val("");
+    $(".section_week_4").html("");
+
+});
+
+//BULAN_5
+$('body').on('click','.week_list_5',function(){
+    $('.section_week_5').prop('hidden', false);
+    $(".section_week_5").html("<div style='font-size:12px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_5_minggu[]' placeholder='Prognosa Minggu 1' style='text-align:right; font-size:14px;' type='text' class='form-control prognosaValue number week_5'></div><div required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_5_minggu[]' placeholder='Prognosa Minggu 2' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_5'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_5_minggu[]' placeholder='Prognosa Minggu 3' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_5'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_5_minggu[]' placeholder='Prognosa Minggu 4' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_5'></div>");
+    $('.input_5').prop('hidden', true);
+    $('.start_5 a i').toggleClass("fa-plus-circle").toggleClass("fa-minus-circle out_5");
+    $('.input_5').val("");
+    $('.enabled_5').prop('hidden', true);
+    $('.enabled_5').prop('disabled', true);
+
+});
+$('body').on('click','.out_5',function(){
+    $('.input_5').prop('hidden', false);
+    $('.section_week_5').prop('hidden', true);
+    $('.week_5').prop('disabled', true);
+    $('.disabled_5').prop('hidden', true);
+    $('.disabled_5').prop('disabled', false);
+    $('.enabled_5').prop('hidden', false);
+    $('.enabled_5').prop('disabled', false);
+    $('.enabled_5').val("");
+    $(".section_week_5").html("");
+
+});
+
+//BULAN_6
+$('body').on('click','.week_list_6',function(){
+    $('.section_week_6').prop('hidden', false);
+    $(".section_week_6").html("<div style='font-size:12px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_6_minggu[]' placeholder='Prognosa Minggu 1' style='text-align:right; font-size:14px;' type='text' class='form-control prognosaValue number week_6'></div><div required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_6_minggu[]' placeholder='Prognosa Minggu 2' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_6'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_6_minggu[]' placeholder='Prognosa Minggu 3' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_6'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_6_minggu[]' placeholder='Prognosa Minggu 4' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_6'></div>");
+    $('.input_6').prop('hidden', true);
+    $('.start_6 a i').toggleClass("fa-plus-circle").toggleClass("fa-minus-circle out_6");
+    $('.input_6').val("");
+    $('.enabled_6').prop('hidden', true);
+    $('.enabled_6').prop('disabled', true);
+
+});
+$('body').on('click','.out_6',function(){
+    $('.input_6').prop('hidden', false);
+    $('.section_week_6').prop('hidden', true);
+    $('.week_6').prop('disabled', true);
+    $('.disabled_6').prop('hidden', true);
+    $('.disabled_6').prop('disabled', false);
+    $('.enabled_6').prop('hidden', false);
+    $('.enabled_6').prop('disabled', false);
+    $('.enabled_6').val("");
+    $(".section_week_6").html("");
+
+});
+
+
+//BULAN_7
+$('body').on('click','.week_list_7',function(){
+    $('.section_week_7').prop('hidden', false);
+    $(".section_week_7").html("<div style='font-size:12px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_7_minggu[]' placeholder='Prognosa Minggu 1' style='text-align:right; font-size:14px;' type='text' class='form-control prognosaValue number week_7'></div><div required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_7_minggu[]' placeholder='Prognosa Minggu 2' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_7'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_7_minggu[]' placeholder='Prognosa Minggu 3' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_7'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_7_minggu[]' placeholder='Prognosa Minggu 4' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_7'></div>");
+    $('.input_7').prop('hidden', true);
+    $('.start_7 a i').toggleClass("fa-plus-circle").toggleClass("fa-minus-circle out_7");
+    $('.input_7').val("");
+    $('.enabled_7').prop('hidden', true);
+    $('.enabled_7').prop('disabled', true);
+
+});
+$('body').on('click','.out_7',function(){
+    $('.input_7').prop('hidden', false);
+    $('.section_week_7').prop('hidden', true);
+    $('.week_7').prop('disabled', true);
+    $('.disabled_7').prop('hidden', true);
+    $('.disabled_7').prop('disabled', false);
+    $('.enabled_7').prop('hidden', false);
+    $('.enabled_7').prop('disabled', false);
+    $('.enabled_7').val("");
+    $(".section_week_7").html("");
+
+});
+
+//BULAN_8
+$('body').on('click','.week_list_8',function(){
+    $('.section_week_8').prop('hidden', false);
+    $(".section_week_8").html("<div style='font-size:12px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_8_minggu[]' placeholder='Prognosa Minggu 1' style='text-align:right; font-size:14px;' type='text' class='form-control prognosaValue number week_8'></div><div required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_8_minggu[]' placeholder='Prognosa Minggu 2' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_8'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_8_minggu[]' placeholder='Prognosa Minggu 3' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_8'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_8_minggu[]' placeholder='Prognosa Minggu 4' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_8'></div>");
+    $('.input_8').prop('hidden', true);
+    $('.start_8 a i').toggleClass("fa-plus-circle").toggleClass("fa-minus-circle out_8");
+    $('.input_8').val("");
+    $('.enabled_8').prop('hidden', true);
+    $('.enabled_8').prop('disabled', true);
+
+});
+$('body').on('click','.out_8',function(){
+    $('.input_8').prop('hidden', false);
+    $('.section_week_8').prop('hidden', true);
+    $('.week_8').prop('disabled', true);
+    $('.disabled_8').prop('hidden', true);
+    $('.disabled_8').prop('disabled', false);
+    $('.enabled_8').prop('hidden', false);
+    $('.enabled_8').prop('disabled', false);
+    $('.enabled_8').val("");
+    $(".section_week_8").html("");
+
+});
+
+//BULAN_9
+$('body').on('click','.week_list_9',function(){
+    $('.section_week_9').prop('hidden', false);
+    $(".section_week_9").html("<div style='font-size:12px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_9_minggu[]' placeholder='Prognosa Minggu 1' style='text-align:right; font-size:14px;' type='text' class='form-control prognosaValue number week_9'></div><div required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_9_minggu[]' placeholder='Prognosa Minggu 2' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_9'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_9_minggu[]' placeholder='Prognosa Minggu 3' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_9'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_9_minggu[]' placeholder='Prognosa Minggu 4' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_9'></div>");
+    $('.input_9').prop('hidden', true);
+    $('.start_9 a i').toggleClass("fa-plus-circle").toggleClass("fa-minus-circle out_9");
+    $('.input_9').val("");
+    $('.enabled_9').prop('hidden', true);
+    $('.enabled_9').prop('disabled', true);
+
+});
+$('body').on('click','.out_9',function(){
+    $('.input_9').prop('hidden', false);
+    $('.section_week_9').prop('hidden', true);
+    $('.week_9').prop('disabled', true);
+    $('.disabled_9').prop('hidden', true);
+    $('.disabled_9').prop('disabled', false);
+    $('.enabled_9').prop('hidden', false);
+    $('.enabled_9').prop('disabled', false);
+    $('.enabled_9').val("");
+    $(".section_week_9").html("");
+
+});
+
+//BULAN_10
+$('body').on('click','.week_list_10',function(){
+    $('.section_week_10').prop('hidden', false);
+    $(".section_week_10").html("<div style='font-size:12px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_10_minggu[]' placeholder='Prognosa Minggu 1' style='text-align:right; font-size:14px;' type='text' class='form-control prognosaValue number week_10'></div><div required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_10_minggu[]' placeholder='Prognosa Minggu 2' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_10'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_10_minggu[]' placeholder='Prognosa Minggu 3' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_10'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_10_minggu[]' placeholder='Prognosa Minggu 4' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_10'></div>");
+    $('.input_10').prop('hidden', true);
+    $('.start_10 a i').toggleClass("fa-plus-circle").toggleClass("fa-minus-circle out_10");
+    $('.input_10').val("");
+    $('.enabled_10').prop('hidden', true);
+    $('.enabled_10').prop('disabled', true);
+
+});
+$('body').on('click','.out_10',function(){
+    $('.input_10').prop('hidden', false);
+    $('.section_week_10').prop('hidden', true);
+    $('.week_10').prop('disabled', true);
+    $('.disabled_10').prop('hidden', true);
+    $('.disabled_10').prop('disabled', false);
+    $('.enabled_10').prop('hidden', false);
+    $('.enabled_10').prop('disabled', false);
+    $('.enabled_10').val("");
+    $(".section_week_10").html("");
+
+});
+
+//BULAN_11
+$('body').on('click','.week_list_11',function(){
+    $('.section_week_11').prop('hidden', false);
+    $(".section_week_11").html("<div style='font-size:12px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_11_minggu[]' placeholder='Prognosa Minggu 1' style='text-align:right; font-size:14px;' type='text' class='form-control prognosaValue number week_11'></div><div required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_11_minggu[]' placeholder='Prognosa Minggu 2' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_11'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_11_minggu[]' placeholder='Prognosa Minggu 3' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_11'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_11_minggu[]' placeholder='Prognosa Minggu 4' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_11'></div>");
+    $('.input_11').prop('hidden', true);
+    $('.start_11 a i').toggleClass("fa-plus-circle").toggleClass("fa-minus-circle out_11");
+    $('.input_11').val("");
+    $('.enabled_11').prop('hidden', true);
+    $('.enabled_11').prop('disabled', true);
+
+});
+$('body').on('click','.out_11',function(){
+    $('.input_11').prop('hidden', false);
+    $('.section_week_11').prop('hidden', true);
+    $('.week_11').prop('disabled', true);
+    $('.disabled_11').prop('hidden', true);
+    $('.disabled_11').prop('disabled', false);
+    $('.enabled_11').prop('hidden', false);
+    $('.enabled_11').prop('disabled', false);
+    $('.enabled_11').val("");
+    $(".section_week_11").html("");
+
+});
+
+//BULAN_12
+$('body').on('click','.week_list_12',function(){
+    $('.section_week_12').prop('hidden', false);
+    $(".section_week_12").html("<div style='font-size:12px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_12_minggu[]' placeholder='Prognosa Minggu 1' style='text-align:right; font-size:14px;' type='text' class='form-control prognosaValue number week_12'></div><div required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_12_minggu[]' placeholder='Prognosa Minggu 2' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_12'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_12_minggu[]' placeholder='Prognosa Minggu 3' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_12'></div><div style='font-size:14px;' required class='input-group mb-1'><span class='input-group-text' style='font-size:14px;'><i class='fa fa-pencil'></i></span><input name='bulan_12_minggu[]' placeholder='Prognosa Minggu 4' style='text-align:right;font-size:14px' type='text' class='form-control prognosaValue number week_12'></div>");
+    $('.input_12').prop('hidden', true);
+    $('.start_12 a i').toggleClass("fa-plus-circle").toggleClass("fa-minus-circle out_12");
+    $('.input_12').val("");
+    $('.enabled_12').prop('hidden', true);
+    $('.enabled_12').prop('disabled', true);
+
+});
+$('body').on('click','.out_12',function(){
+    $('.input_12').prop('hidden', false);
+    $('.section_week_12').prop('hidden', true);
+    $('.week_12').prop('disabled', true);
+    $('.disabled_12').prop('hidden', true);
+    $('.disabled_12').prop('disabled', false);
+    $('.enabled_12').prop('hidden', false);
+    $('.enabled_12').prop('disabled', false);
+    $('.enabled_12').val("");
+    $(".section_week_12").html("");
+
+});
+
+
+$('body').on('click','.setMonthBelanja',function(){
+    $.blockUI({
+            message: 'Updating Data',
+            fadeIn: 800,
+            overlayCSS: {
+                backgroundColor: '#1b2024',
+                opacity: 0.8,
+                zIndex: 1200,
+                cursor: 'wait'
+            },
+            css: {
+                border: 0,
+                color: '#fff',
+                zIndex: 1201,
+                padding: 0,
+                backgroundColor: 'transparent'
+            }
+        });
+
+    var month   = $(this).attr("month");
+    var unit    = $(this).attr("unit");
+    var segment = $(this).attr("segment");
+    // alert(month);
+
+    $.ajax({
+            url    : '/admin/belanja/'+unit+'/'+segment+'/'+month,
+            method : "GET",
+            data   : {unit:unit,segment:segment,month:month},
+            cache  : false,
+            success: function(data){
+                $.unblockUI();
+                location.reload();
+            }
+    });
+});
+
+
+
+    function addCommas(nStr) {
+        nStr += '';
+        x = nStr.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + '.' + '$2');
+        }
+        return x1 + x2;
+    }
+
+    $('body').on('keyup','.number',function(){
+        $(this).val(function(i, v) {
+        return v.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        });
+    });
+
+});
+
+</script>
+    <!-- Plugin used-->
+
+
+  </body>
+</html>
+
+

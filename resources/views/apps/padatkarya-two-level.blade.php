@@ -1,0 +1,163 @@
+@extends('layouts.simple.master')
+@section('title', 'Rangking Satker')
+
+@section('css')
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/datatables.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/datatable-extension.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/bootstrap/bootstrap-table.min.css')}}">
+
+@endsection
+
+@section('style')
+@endsection
+
+@section('breadcrumb-title')
+@endsection
+
+@section('breadcrumb-items')
+<li class="breadcrumb-item">Padat Karya</li>
+<li class="breadcrumb-item">{{ucfirst($unit ?? '')}}</li>
+<li class="breadcrumb-item active">{{$segment}}</li>
+@endsection
+
+@section('content')
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="card">
+                <div class="card-header card-no-border">
+                    <div class="header-top">
+                      <h5 class="m-0">{{$segment}} Padat Karya Per {{$unit ?? ''}}
+                      </h5>
+                      <div class="card-header-right-icon">
+                        <div class="row">
+
+                            <div class="col-2">
+                                <div class="export p-1">
+                                    <i data-feather="printer" class="exportbtn text-primary"></i>
+                                    <div class="export-content">
+                                        <a target="_blank" href="{{route(Auth::user()->ba.'/reportPadatKarya',['type'=>'excell','unit'=>Request::route('unit'),'segment'=>Request::route('segment'),'month'=>Request::route('month')])}}">Excell</a>
+                                        <a target="_blank" href="{{route(Auth::user()->ba.'/reportPadatKarya',['type'=>'pdf','unit'=>Request::route('unit'),'segment'=>Request::route('segment'),'month'=>Request::route('month')])}}">Pdf</a>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                        <div class="table-responsive">
+                            <table class="table table-sm" id="card">
+                                <thead class="bg-primary">
+                                    <tr>
+                                        <th class="text-center">NO</th>
+                                        <th class="text-center">KODE</th>
+                                        <th class="text-start">KETERANGAN</th>
+                                        <th class="text-center"></th>
+                                        <th class="text-end">PAGU</th>
+                                        <th class="text-end">REALISASI</th>
+                                        <th class="text-center">%</th>
+                                        <th class="text-end">SISA</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php
+                                    $totalpagu = 0;
+                                    $totaldsa  = 0;
+                                    $totalsisa = 0;
+
+
+                                    @endphp
+                                    @foreach ($data as $item)
+                                    <tr class="table-danger">
+                                        <th class="text-center">{{$item->KodeWilayah}}</th>
+                                        <th class="text-start" colspan="7">{{$item->NamaWilayah}}</th>
+                                    </tr>
+                                    @php
+                                        $totalpaguProp = 0;
+                                        $totaldsaProp  = 0;
+                                        $totalsisaProp = 0;
+                                    @endphp
+                                    @foreach ($item->Program as $item)
+                                    <tr class="table-danger">
+                                        <th class="text-end"></th>
+                                        <th class="text-start">{{$item->KodeProgram}}</th>
+                                        <th class="text-start">{{$item->NamaProgram}}</th>
+                                        <th class="text-end" colspan="5"></th>
+                                    </tr>
+                                    @foreach ($item->Kegiatan as $Kegiatan)
+                                    <tr class="table-warning">
+                                        <th class="text-end"></th>
+                                        <th class="text-start">{{$Kegiatan->KodeKegiatan}}</th>
+                                        <th class="text-start">{{$Kegiatan->NamaKegiatan}}</th>
+                                        <th class="text-end" colspan="5"></th>
+                                    </tr>
+                                    @foreach ($Kegiatan->Output as $Output)
+                                    <tr class="table-success">
+                                        <th class="text-end"></th>
+                                        <th class="text-start">{{$Output->KodeOutput}}</th>
+                                        <th class="text-start">{{$Output->NamaOutput}}</th>
+                                        <th class="text-end" colspan="5"></th>
+                                    </tr>
+                                    @foreach ($Output->Akun as $Akun)
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="text-start">{{$Akun->KodeAkun}}</td>
+                                        <td class="text-start">{{$Akun->NamaAkun}}</td>
+                                        <td class="text-center">{{$Akun->KodeSumberDana}}</td>
+                                        <td class="text-end">{{RP($Akun->Pagu)}}</td>
+                                        <td class="text-end">{{RP($Akun->Dsa)}}</td>
+                                        <td class="text-center">{{Persen($Akun->Persen)}}%</td>
+                                        <td class="text-end">{{RP($Akun->Sisa)}}</td>
+
+                                    </tr>
+                                    @php
+                                        $totalpagu += $Akun->Pagu;
+                                        $totaldsa  += $Akun->Dsa;
+                                        $totalsisa += $Akun->Sisa;
+                                    @endphp
+                                    @php
+                                        $totalpaguProp += $Akun->Pagu;
+                                        $totaldsaProp  += $Akun->Dsa;
+                                        $totalsisaProp += $Akun->Sisa;
+                                    @endphp
+                                    @endforeach
+                                    @endforeach
+                                    @endforeach
+
+                                    @endforeach
+                                    <tr>
+                                        <th class="text-center"></th>
+                                        <th class="text-start"></th>
+                                        <th class="text-start">JUMLAH PROPINSI</th>
+                                        <th class="text-center"></th>
+                                        <th class="text-end">{{RP($totalpaguProp)}}</th>
+                                        <th class="text-end">{{RP($totaldsaProp)}}</th>
+                                        <th class="text-center">{{Persen(divnum($totaldsaProp,$totalpaguProp)*100)}}%</th>
+                                        <th class="text-end">{{RP($totalsisaProp)}}</th>
+                                    </tr>
+
+                                    @endforeach
+                                </tbody>
+                                <tfoot class="table-primary">
+                                    <tr>
+                                        <th></th>
+                                        <th class="text-end"></th>
+                                        <th class="text-start">JUMLAH</th>
+                                        <th class="text-end"></th>
+                                        <th class="text-end">{{RP($totalpagu)}}</th>
+                                        <th class="text-end">{{RP($totaldsa)}}</th>
+                                        <th class="text-center">{{Persen(divnum($totaldsa,$totalpagu)*100)}}%</th>
+                                        <th class="text-end">{{RP($totalsisa)}}</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+			</div>
+            </div>
+		</div>
+	</div>
+</div>
+@endsection
+
+@section('script')
+@endsection
